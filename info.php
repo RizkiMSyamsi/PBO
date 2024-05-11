@@ -5,10 +5,16 @@
 <div class="col-md-9">
 	<div class="row">
 		<?php
-			$q = mysqli_query($db,"Select * from info_pembayaran limit 1") or die (mysqli_error($db));
+			$q = mysqli_query($db,"SELECT * FROM info_pembayaran LIMIT 1") or die (mysqli_error($db));
 			$data = mysqli_fetch_object($q);
 		?>
-		<pre><?php echo $data->info; ?></pre>
+		<div class="info-pembayaran">
+			<h3>Informasi Pembayaran</h3>
+			<hr>
+			<div class="info-content">
+				<?php echo $data->info; ?>
+			</div>
+		</div>
 	</div>
 </div>
 <?php

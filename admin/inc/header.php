@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">    
-		<title>Administrator Web</title>
+		<title>ADMIN</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -23,6 +23,7 @@
     <link href="<?php echo $url ?>assets/css/navbar-fixed-top.css" rel="stylesheet">
     <link href="<?php echo $url ?>assets/css/full-slider.css" rel="stylesheet">
     <link href="<?php echo $url ?>assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]
@@ -58,9 +59,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="<?php echo $url ?>admin/index.php">Home</a></li>
+            <li><a href="<?php echo $url ?>admin/index.php"><i class="fa-solid fa-house"></i></a></li>
 			<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Master Data <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-database"></i><span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="user.php">Data User</a></li>
                 <li><a href="produk.php">Data Produk</a></li>
@@ -69,23 +70,21 @@
               </ul>
             </li>
             <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Laporan <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa-regular fa-flag"></i><span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="laporan_pengeluaran.php">Laporan Pengeluaran </a></li>
                       <li><a href="input_pengeluaran.php">Input Pengeluaran</a></li>
-                      <li><a href="">Laporan Laba rugi</a></li>
                       <li><a href="laporan.php">Laporan Penjualan</a></li>
-                      <li><a href="">Input Penjualan</a></li>
                     </ul>
                   </li>
-            <li><a href="pesanan.php">Pesanan
+            <li><a href="pesanan.php"><i class="fa-solid fa-cart-shopping"></i>
               <?php if ($totalUnRead > 0) { ?> <span class="badge"><?php echo $totalUnRead; ?></span> <?php } ?>
             </a></li>
-            <li><a href="pembayaran.php">Pembayaran
+            <li><a href="pembayaran.php"><i class="fa-solid fa-money-bill"></i>
               <?php if ($totalPending > 0) { ?> <span class="badge"><?php echo $totalPending; ?></span> <?php } ?>
             </a></li>
-            <li><a href="kontak.php">Kontak</a></li>
-            <li><a href="<?php echo $url ?>admin/logout.php">Logout</a></li>
+            <li><a href="kontak.php"><i class="fa-solid fa-address-book"></i></a></li>
+            <li><a href="<?php echo $url ?>admin/logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

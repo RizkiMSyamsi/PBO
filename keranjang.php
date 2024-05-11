@@ -25,18 +25,6 @@
 			if(isset($cart[$pid])){
 				unset($cart[$pid]);
 			}	
-				//$arr = unserialize($str);
-
-
-			//}else{
-				
-				//redir($url.'keranjang.php');
-			//}
-				// foreach($cart as $key => $value){
-				  // if ($cart[$key] == $_GET['delete_cart']) 
-					  // unset($cart[$key]);
-				// }
-				// $cart = serialize($cart);
 		}else{
         
             if(isset($cart[$pid]))
@@ -47,8 +35,7 @@
         $_SESSION['cart'] = serialize($cart);
 		redir($url.'keranjang.php');
     }
-	//unset($_SESSION['cart']);
-	//print_r($_SESSION['cart']);
+
 	
 	
 ?> 	 
@@ -58,6 +45,7 @@
 				
 				
 				<h2>
+				<i class="fa-solid fa-cart-shopping"></i>
                    Keranjang anda :
                 </h2>
 				<table class="table table-striped" style="width:100%">

@@ -27,7 +27,7 @@
 				$difference = $val_digunakan->diff($val_pesan);
 				//echo $difference->days;
 				$kt = mysqli_fetch_object(mysqli_query($db,"SELECT *FROM kota where id='$kota'"));
-				if($difference->days >= 3){
+				if($difference->days >= 0){
 					
 					$q = mysqli_query($db,"insert into pesanan Values(NULL,'$tanggal_pesan','$tanggal_digunakan','$_SESSION[iam_user]','$nama','$alamat','$kt->nama','$kt->ongkir','$telephone','0','belum lunas')");
 					if($q){
@@ -56,7 +56,7 @@
 
 				}else{
 					?>
-					<div class="alert alert-danger">Tanggal Penggunakan terlalu mepet. Pemesanan paling sedikit 3 Hari sebelum hari H.</div>
+					<div class="alert alert-danger">iseng</div>
 					<?php
 				}
 			}
@@ -69,17 +69,6 @@
 				<hr>
 				 <form action="" method="post" enctype="multipart/form-data">
 
-						<label>Waktu Pengiriman</label><br>
-						<div class="form-group">
-							<div class='input-group date' id='datetimepicker'>
-								<input type='text' class="form-control" name="tanggal_digunakan"
-								value="<?php echo (!empty($_POST['tanggal_digunakan'])) ? $_POST['tanggal_digunakan'] : ''; ?>"
-								required />
-								<span class="input-group-addon">
-									<span class="glyphicon glyphicon-calendar"></span>
-								</span>
-							</div>
-						</div>
 						<label>Nama</label><br>
 						<input type="text" class="form-control" name="nama" required
 						value="<?php echo (!empty($_POST['nama'])) ? $_POST['nama'] : $user->nama; ?>"

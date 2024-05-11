@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Bulan Mei 2024 pada 14.58
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.2.12
+-- Generation Time: May 10, 2024 at 06:37 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_pesanan`
+-- Table structure for table `detail_pesanan`
 --
 
 CREATE TABLE `detail_pesanan` (
@@ -34,10 +34,17 @@ CREATE TABLE `detail_pesanan` (
   `pesanan_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `detail_pesanan`
+--
+
+INSERT INTO `detail_pesanan` (`id`, `produk_id`, `qty`, `pesanan_id`) VALUES
+(21, 4, 42, 27);
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `info_pembayaran`
+-- Table structure for table `info_pembayaran`
 --
 
 CREATE TABLE `info_pembayaran` (
@@ -46,7 +53,7 @@ CREATE TABLE `info_pembayaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `info_pembayaran`
+-- Dumping data for table `info_pembayaran`
 --
 
 INSERT INTO `info_pembayaran` (`id`, `info`) VALUES
@@ -55,7 +62,7 @@ INSERT INTO `info_pembayaran` (`id`, `info`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori_produk`
+-- Table structure for table `kategori_produk`
 --
 
 CREATE TABLE `kategori_produk` (
@@ -65,7 +72,7 @@ CREATE TABLE `kategori_produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `kategori_produk`
+-- Dumping data for table `kategori_produk`
 --
 
 INSERT INTO `kategori_produk` (`id`, `nama`, `deskripsi`) VALUES
@@ -79,7 +86,7 @@ INSERT INTO `kategori_produk` (`id`, `nama`, `deskripsi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kontak`
+-- Table structure for table `kontak`
 --
 
 CREATE TABLE `kontak` (
@@ -91,30 +98,16 @@ CREATE TABLE `kontak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `kontak`
+-- Dumping data for table `kontak`
 --
 
 INSERT INTO `kontak` (`id`, `nama`, `email`, `subjek`, `pesan`) VALUES
-(10, '', 'mshodiqul@gmail.com', '', ''),
-(11, '', 'mshodiqul@gmail.com', '', ''),
-(12, '', 'mshodiqul@gmail.com', '', ''),
-(13, '', 'mshodiqul@gmail.com', '', ''),
-(14, '', 'mshodiqul@gmail.com', '', ''),
-(15, '', 'meryayu@gmail.com', '', ''),
-(16, '', 'aku@gmail.com', '', ''),
-(17, '', 'aku@gmail.com', '', ''),
-(18, '', 'aku@gmail.com', '', ''),
-(19, '', 'aku@gmail.com', '', ''),
-(20, '', 'aku@gmail.com', '', ''),
-(21, '', 'aku@gmail.com', '', ''),
-(22, '', 'aku@gmail.com', '', ''),
-(23, '', 'isminilam@gmail.com', '', ''),
-(24, '', 'isminilam@gmail.com', '', '');
+(29, '', 'rizkimsg@gmail.com', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kota`
+-- Table structure for table `kota`
 --
 
 CREATE TABLE `kota` (
@@ -124,16 +117,17 @@ CREATE TABLE `kota` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `kota`
+-- Dumping data for table `kota`
 --
 
 INSERT INTO `kota` (`id`, `nama`, `ongkir`) VALUES
-(2, 'Semarang', 40000);
+(4, 'JABODETABEK', 20000),
+(5, 'JABODATABEK (YES)', 30000);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `laporan`
+-- Table structure for table `laporan`
 --
 
 CREATE TABLE `laporan` (
@@ -146,7 +140,7 @@ CREATE TABLE `laporan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `laporan`
+-- Dumping data for table `laporan`
 --
 
 INSERT INTO `laporan` (`id_pengeluaran`, `nama_barang`, `Tanggal_pengeluaran`, `harga`, `jumlah`, `total`) VALUES
@@ -158,7 +152,7 @@ INSERT INTO `laporan` (`id_pengeluaran`, `nama_barang`, `Tanggal_pengeluaran`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pembayaran`
+-- Table structure for table `pembayaran`
 --
 
 CREATE TABLE `pembayaran` (
@@ -173,22 +167,16 @@ CREATE TABLE `pembayaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `pembayaran`
+-- Dumping data for table `pembayaran`
 --
 
 INSERT INTO `pembayaran` (`id`, `id_pesanan`, `id_user`, `file`, `total`, `status`, `keterangan`, `created_at`) VALUES
-(3, 17, 4, '49eb6a44db57cba8d66b3404fa9f0ad45.jpg', 200000, 'verified', 'Contoh Pembayaran', '0000-00-00 00:00:00'),
-(4, 17, 4, '49eb6a44db57cba8d66b3404fa9f0ad46.jpg', 200000, 'verified', 'Pembayaran Ke Dua', '2016-09-30 15:58:35'),
-(5, 17, 4, '49eb6a44db57cba8d66b3404fa9f0ad46.jpg', 107500, 'verified', 'Terakhir', '2016-09-30 16:10:33'),
-(6, 18, 4, '49eb6a44db57cba8d66b3404fa9f0ad46.jpg', 300000, 'verified', 'Bukti Pembayaran', '2016-09-30 16:16:32'),
-(7, 18, 4, '49eb6a44db57cba8d66b3404fa9f0ad44.jpg', 40000, 'verified', 'Pembayaran Terakhir', '2016-09-30 16:24:01'),
-(8, 19, 4, '49eb6a44db57cba8d66b3404fa9f0ad4buttons.png', 520000, 'verified', 'Bukti Pembayaran', '2016-09-30 16:34:54'),
-(9, 25, 6, '49eb6a44db57cba8d66b3404fa9f0ad4urmain.exe', 740000, 'verified', 'Done', '2017-12-04 09:14:10');
+(11, 27, 8, '49eb6a44db57cba8d66b3404fa9f0ad4RangkumanNilai (3).pdf', 12620000, 'verified', '', '2024-05-10 23:26:27');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pesanan`
+-- Table structure for table `pesanan`
 --
 
 CREATE TABLE `pesanan` (
@@ -206,22 +194,16 @@ CREATE TABLE `pesanan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `pesanan`
+-- Dumping data for table `pesanan`
 --
 
 INSERT INTO `pesanan` (`id`, `tanggal_pesan`, `tanggal_digunakan`, `user_id`, `nama`, `alamat`, `kota`, `ongkir`, `telephone`, `read`, `status`) VALUES
-(17, '2016-09-30 08:27:51', '2016-10-04 07:00:00', 4, 'Shodiqul Muzaki', 'karangasem', 'Semarang', 40000, '087717495260', '1', 'lunas'),
-(18, '2016-09-30 11:15:02', '2016-10-05 08:02:00', 4, 'Shodiqul Muzaki', 'karangasem', 'Semarang', 40000, '087717495260', '1', 'lunas'),
-(19, '2016-09-30 11:34:22', '2016-10-07 07:00:00', 4, 'Shodiqul Muzaki', 'karangasem', 'Semarang', 40000, '087717495260', '1', 'lunas'),
-(20, '2016-10-03 04:53:05', '2016-10-11 09:00:00', 5, 'Mery Ayu Nurita', 'Semarang aja', 'Semarang', 40000, '089688899260', '1', 'belum lunas'),
-(23, '2017-12-04 03:09:46', '2017-12-12 00:00:00', 6, 'aku', 'jember', 'Semarang', 40000, '12345678', '1', 'belum lunas'),
-(24, '2017-12-04 03:10:15', '2017-12-21 18:00:00', 6, 'aku', 'jember', 'Semarang', 40000, '12345678', '1', 'belum lunas'),
-(25, '2017-12-04 03:13:18', '2017-12-21 00:00:00', 6, 'aku', 'jember', 'Semarang', 40000, '12345678', '1', 'lunas');
+(27, '2024-05-10 18:00:04', '0000-00-00 00:00:00', 8, 'sam', 'bekasi', 'JABODETABEK', 20000, '234', '1', 'lunas');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `produk`
+-- Table structure for table `produk`
 --
 
 CREATE TABLE `produk` (
@@ -234,7 +216,7 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `produk`
+-- Dumping data for table `produk`
 --
 
 INSERT INTO `produk` (`id`, `nama`, `deskripsi`, `gambar`, `harga`, `kategori_produk_id`) VALUES
@@ -250,7 +232,7 @@ INSERT INTO `produk` (`id`, `nama`, `deskripsi`, `gambar`, `harga`, `kategori_pr
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -264,24 +246,19 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `nama`, `email`, `telephone`, `alamat`, `password`, `status`) VALUES
-(1, 'Administrator', 'admin@gmail.com', '08985432330', 'Semarang Ajah', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
-(2, 'Jokowi', 'joko@gmail.com', '08985432330', 'jakarta 1', '7d00ff54a263fe80825b9297804a982c', 'user'),
-(3, 'Putri Delvia', 'putri@gmail.com', '08985432330', 'semarang selatan', '82682943a05de360abb183236c632bd6', 'user'),
-(4, 'Shodiqul Muzaki', 'mshodiqul@gmail.com', '087717495260', 'karangasem', 'a63ae42a413740542ce47bb20a124438', 'user'),
-(5, 'Mery Ayu Nurita', 'meryayu@gmail.com', '089688899260', 'Semarang aja', 'a63ae42a413740542ce47bb20a124438', 'user'),
-(6, 'aku', 'aku@gmail.com', '12345678', 'jember', '89ccfac87d8d06db06bf3211cb2d69ed', 'user'),
-(7, 'Ismi', 'isminilam@gmail.com', '0812234567', 'Jl. mawar', '7ac66c0f148de9519b8bd264312c4d64', 'user');
+(1, 'Administrator', 'admin@gmail.com', '08985432330', 'ISEKAI', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
+(8, 'sam', 'rizkimsg@gmail.com', '234', 'bekasi', '49f0bad299687c62334182178bfd75d8', 'user');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `detail_pesanan`
+-- Indexes for table `detail_pesanan`
 --
 ALTER TABLE `detail_pesanan`
   ADD PRIMARY KEY (`id`,`produk_id`,`pesanan_id`),
@@ -289,144 +266,144 @@ ALTER TABLE `detail_pesanan`
   ADD KEY `produk_id` (`produk_id`);
 
 --
--- Indeks untuk tabel `info_pembayaran`
+-- Indexes for table `info_pembayaran`
 --
 ALTER TABLE `info_pembayaran`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `kategori_produk`
+-- Indexes for table `kategori_produk`
 --
 ALTER TABLE `kategori_produk`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `kontak`
+-- Indexes for table `kontak`
 --
 ALTER TABLE `kontak`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `kota`
+-- Indexes for table `kota`
 --
 ALTER TABLE `kota`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `laporan`
+-- Indexes for table `laporan`
 --
 ALTER TABLE `laporan`
   ADD PRIMARY KEY (`id_pengeluaran`);
 
 --
--- Indeks untuk tabel `pembayaran`
+-- Indexes for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `pesanan`
+-- Indexes for table `pesanan`
 --
 ALTER TABLE `pesanan`
   ADD PRIMARY KEY (`id`,`user_id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indeks untuk tabel `produk`
+-- Indexes for table `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id`,`kategori_produk_id`),
   ADD KEY `kategori_produk_id` (`kategori_produk_id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `detail_pesanan`
+-- AUTO_INCREMENT for table `detail_pesanan`
 --
 ALTER TABLE `detail_pesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT untuk tabel `info_pembayaran`
+-- AUTO_INCREMENT for table `info_pembayaran`
 --
 ALTER TABLE `info_pembayaran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori_produk`
+-- AUTO_INCREMENT for table `kategori_produk`
 --
 ALTER TABLE `kategori_produk`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `kontak`
+-- AUTO_INCREMENT for table `kontak`
 --
 ALTER TABLE `kontak`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT untuk tabel `kota`
+-- AUTO_INCREMENT for table `kota`
 --
 ALTER TABLE `kota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `laporan`
+-- AUTO_INCREMENT for table `laporan`
 --
 ALTER TABLE `laporan`
   MODIFY `id_pengeluaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
--- AUTO_INCREMENT untuk tabel `pembayaran`
+-- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `pesanan`
+-- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT untuk tabel `produk`
+-- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
   MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `detail_pesanan`
+-- Constraints for table `detail_pesanan`
 --
 ALTER TABLE `detail_pesanan`
   ADD CONSTRAINT `detail_pesanan_ibfk_2` FOREIGN KEY (`pesanan_id`) REFERENCES `pesanan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `detail_pesanan_ibfk_3` FOREIGN KEY (`produk_id`) REFERENCES `produk` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `pesanan`
+-- Constraints for table `pesanan`
 --
 ALTER TABLE `pesanan`
   ADD CONSTRAINT `pesanan_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `produk`
+-- Constraints for table `produk`
 --
 ALTER TABLE `produk`
   ADD CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`kategori_produk_id`) REFERENCES `kategori_produk` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

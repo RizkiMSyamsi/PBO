@@ -39,7 +39,7 @@
 				<?php } } ?>
 			<h3>Login User</h3>
 				<hr>
-				<div class="col-md-6 content-menu" style="margin-top:-20px;">
+				<div class="col-md-9 content-menu" style="margin-top:-20px;">
 				 
 				 <form action="" method="post" enctype="multipart/form-data">
 						<label>Email</label><br>
@@ -50,8 +50,8 @@
 					</form>
 				 
 				</div>   
-				<div class="col-md-12 content-menu">
-				 Belum Punya Akun ? <a href="register.php">Buat Akun Sekarang !</a>
+				<div class="col-md-9 content-menu">
+				<a href="register.php">Buat Akun Sekarang !</a> <a href="lupapw.php">Lupa Password</a>
 				</div>   
 					
 				

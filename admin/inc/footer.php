@@ -1,7 +1,7 @@
 	<div class="container" style="margin-top:20px;">
 		<footer class="text-center">
 		<hr>
-			<div class="col-md-12">Copyright ©2016
+			<div class="col-md-12">@Kelompok 7
 			<br>
 			<br>
 			</div>

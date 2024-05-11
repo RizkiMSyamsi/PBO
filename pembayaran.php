@@ -89,7 +89,6 @@
 				<th>#</th>
 				<th>Nama Pemesan</th>
 				<th>Tanggal Pesan</th>
-				<th>Tanggal Digunakan</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -103,7 +102,6 @@
 				?>
 				<td><?php echo $data->nama ?></td>
 				<td><?php echo substr($data->tanggal_pesan,0,10) ?></td>
-				<td><?php echo $data->tanggal_digunakan ?></td>
 				<td>
 					<a class="btn btn-sm btn-primary" href="pembayaran.php?act=bayar&id=<?php echo $data->id; ?>">Bayar</a>
 					<a class="btn btn-sm btn-danger" href="pembayaran.php?act=delete&id=<?php echo $data->id; ?>">Batalkan</a>

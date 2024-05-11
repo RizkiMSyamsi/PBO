@@ -3,23 +3,6 @@
 	validate_admin_not_login("login.php");
 	
 	$aa = mysqli_query($db,"update pesanan SET `read`='1' where id=$_GET[id]") or die(mysqli_error($db));
-	// if(!empty($_GET)){
-		// if($_GET['act'] == 'delete'){
-			
-			// $q = mysql_query("delete from pesanan WHERE id='$_GET[id]'");
-			// if($q){ alert("Success"); redir("pesanan.php"); }
-		// }  
-	// }
-	
-	// if(!empty($_GET['act']) && $_GET['act'] == 'edit'){
-		// if(!empty($_POST)){
-			// extract($_POST); 
-
-			// $q = mysql_query("update pesanan SET tanggal_pesan='$tanggal_pesan',tanggal_digunakan='$tanggal_digunakan',user_id='$user_id',alamat='$alamat',telephone='$telephone' where id=$_GET[id]") or die(mysql_error());
-			// if($q){ alert("Success"); redir("pesanan.php"); }
-		// }
-	// }
-	
 	
 	include"inc/header.php";
 	

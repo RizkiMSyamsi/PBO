@@ -81,8 +81,6 @@
 						<input type="text" class="form-control" name="telephone" value="<?php echo $data->telephone; ?>" required><br>
 						<label>Alamat</label><br>
 						<input type="text" class="form-control" name="alamat" value="<?php echo $data->alamat; ?>" required><br>
-						<label>Password</label><br>
-						<input type="password" class="form-control" name="password" required><br>
 						<label>Status</label><br>
 						<select name="status" required class="form-control"> 
 						 

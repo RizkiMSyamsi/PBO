@@ -13,7 +13,7 @@
 		<h2>Hi, <?php echo $u->nama ?></h2>
 		<br>
 		<br>
-		<h1>Welcome to Administrator</h1>
+		<h1></h1>
     </div> <!-- /container -->
 
 

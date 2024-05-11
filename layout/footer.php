@@ -2,11 +2,13 @@
     </div> <!-- /container -->
 	
 	<hr>
-	<div class="container footer w-100" style="margin-top:20px;">
+	<div class="container-fluid footer" style="margin: top 20px; background-color:#1F2544;">
+
 		<br/>
 		<footer class="text-center">
 			<div class="col-md-12">
 			<br>
+			<p>@KELOMPOK 7</p>
 			<br>
 			</div>
 		</footer>

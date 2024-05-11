@@ -18,7 +18,7 @@
 		 
 			<h3>Profile : <?php echo $user->nama; ?></h3>
 				<hr>
-				<div class="col-md-6	 content-menu" style="margin-top:-20px;">
+				<div class="col-md-12	 content-menu" style="margin-top:-20px;">
 				 <table class="table table-striped">
 					<tr>
 						<td>Nama</td>

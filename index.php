@@ -7,7 +7,7 @@
 		<div class="col-md-9">
 			<div class="row">
 			<div class="col-md-12">
-			<h3>Best Sellers</h3>
+			<h3><i class="fa-brands fa-gratipay"></i> Best Sellers</h3>
 				
 				<?php 
 					$k = mysqli_query($db, "SELECT * FROM produk ORDER BY id ASC limit 3"); 
@@ -34,7 +34,7 @@
 			<div class="row">
 			<div class="col-md-12">
 			<hr>
-			<h3>Produk Terbaru</h3>
+			<h3><i class="fa-solid fa-square-plus"></i> Produk Terbaru</h3>
 				<?php 
 					$k = mysqli_query($db ,"SELECT * FROM produk ORDER BY id DESC limit 3"); 
 					while($data = mysqli_fetch_array($k)){
